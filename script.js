@@ -62,7 +62,7 @@ var type = new Typed(".textline", {
     "DevOps Jr",
     "Analista de Suporte",
   ],
-  typeSeed: 100,
+  typeSeed: 10000,
   backSpeed: 100,
   backDelay: 1000,
   loop: true,
