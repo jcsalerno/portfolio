@@ -53,3 +53,17 @@ menubar.onclick = () => {
   menubar.classList.toggle("bx-x");
   navbar.classList.toggle("active");
 };
+
+var type = new Typed(".textline", {
+  strings: [
+    "Desenvolvedor Full Stack",
+    "Estudante de ADS",
+    "Estudante de Redes de Computadores",
+    "DevOps Jr",
+    "Analista de Suporte",
+  ],
+  typeSeed: 100,
+  backSpeed: 100,
+  backDelay: 1000,
+  loop: true,
+});

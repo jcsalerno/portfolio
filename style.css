@@ -47,6 +47,19 @@ section {
   color: #fff;
   font-weight: 700;
   cursor: pointer;
+  animation: SlideRight 1s ease forwards;
+  opacity: 0;
+}
+
+@keyframes SlideRight {
+  0% {
+    transform: translateX(-100%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
 .navbar a {
@@ -499,8 +512,6 @@ form .btn {
   box-shadow: none;
 }
 
-/* Adicione estas regras no final do seu arquivo CSS */
-
 /* Redes sociais com brilho no modo mobile */
 .social-media a:hover,
 .social-media a.active {
@@ -510,34 +521,38 @@ form .btn {
 }
 
 /* Projetos recentes - Exibir texto apenas quando o mouse está sobre a imagem */
-.portfolio-box .portfolio-head {
-  position: absolute;
-  bottom: -100%;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(rgba(0, 0, 0, 0.3), #f34a0e);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0 4rem;
-  transition: 0.5s ease;
-}
+@media (max-width: 768px) {
+  .portfolio-box .portfolio-head {
+    position: absolute;
+    bottom: -100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), #f34a0e);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 4rem;
+    transition: 0.5s ease;
+  }
 
-.portfolio-box:hover .portfolio-head {
-  bottom: 0;
-}
+  .portfolio-box:hover .portfolio-head {
+    bottom: 0;
+  }
 
-/* Remova o texto quando não houver hover */
-.portfolio-box:hover .portfolio-head h4 {
-  margin-bottom: 0;
-}
+  /* Remova o texto quando não houver hover */
+  .portfolio-box:hover .portfolio-head h4 {
+    margin-bottom: 0;
+  }
 
-.portfolio-box .portfolio-head h4,
-.portfolio-head p {
-  font-size: 2rem;
-  margin-bottom: 3.5rem;
-}
-.portfolio-head i {
-  font-size: 3rem;
+  .portfolio-box .portfolio-head h4 {
+    font-size: 3rem;
+  }
+  .portfolio-head p {
+    font-size: 2rem;
+    margin-bottom: 3.5rem;
+  }
+  .portfolio-head i {
+    font-size: 3.5rem;
+  }
 }
