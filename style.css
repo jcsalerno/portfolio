@@ -69,6 +69,20 @@ section {
   display: inline-block;
   margin-left: 4rem;
   font-size: 1.7rem;
+  animation: slideTop 0.5s ease forwards;
+  opacity: 0;
+  animation-delay: calc(0.2s * var(--clr));
+}
+
+@keyframes slideTop {
+  0% {
+    transform: translatey(-100px);
+    opacity: 1;
+  }
+  100% {
+    transform: translatey(0);
+    opacity: 1;
+  }
 }
 
 .navbar a:hover,
@@ -79,6 +93,7 @@ section {
 #menu {
   font-size: 3.6rem;
   display: none;
+  cursor: pointer;
 }
 
 .home {
@@ -94,18 +109,37 @@ section {
 .home-detail h3 {
   font-size: 3.2rem;
   font-weight: 700;
+  animation: slideTop 0.7s ease forwards;
+  animation-delay: 0.7s;
+  opacity: 0;
 }
 
 .home-detail h1 {
   font-size: 5.6rem;
   font-weight: 700;
   margin: -3px 0;
-  opacity: 1;
+  animation: SlideRight 1s ease forwards;
+  opacity: 0;
+  animation-delay: 1s;
 }
 
 .home-detail p {
   font-size: 1.6rem;
   opacity: 1;
+  animation: SlideLeft 1s ease forwards;
+  opacity: 0;
+  animation-delay: 1s;
+}
+
+@keyframes SlideLeft {
+  0% {
+    transform: translateX(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 .social-media a {
@@ -162,7 +196,35 @@ span {
 }
 
 .home .home-img img {
-  width: 35vw;
+  animation: Zoom 1s ease forwards, Float 4s ease-in-out infinite;
+  animation-delay: 2s, 3s;
+  opacity: 0;
+}
+
+@keyframes Zoom {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes Float {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-24px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 .about-img img {
@@ -435,6 +497,9 @@ form .btn {
   .portfolio .portfolio-section {
     grid-template-columns: repeat(1, 1fr);
   }
+  .home .home-img img {
+    width: 90%;
+  }
 }
 
 @media (max-width: 450px) {
@@ -444,11 +509,14 @@ form .btn {
   .input-box input {
     width: 100%;
   }
+  .home-img img {
+    width: 90%;
+  }
 }
 
 @media (max-width: 350px) {
   .home-img img {
-    width: 90vw;
+    width: 90%;
   }
   .about-img img {
     width: 90vw;
