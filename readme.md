@@ -63,4 +63,4 @@ Espero que goste do meu trabalho!
 
 ## GIF do Portfolio
 
-![gif do projeto final](gif-do-final.gif)
+![gif do projeto final](img/gif-do-final.gif)
