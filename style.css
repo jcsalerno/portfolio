@@ -34,8 +34,8 @@ body {
 }
 
 section {
-  min-height: 70vh;
-  padding: 5rem 9% 2rem;
+  min-height: 65vh; /* alterado de 70 para 60rvh */
+  padding: 5rem 10%; /* alterado de 9 para 10% */
 }
 
 .sticky {
@@ -98,7 +98,7 @@ section {
 
 .home {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -124,7 +124,7 @@ section {
 }
 
 .home-detail p {
-  font-size: 1.6rem;
+  font-size: 1.5rem; /* alterado de 1.6 para 2rem */
   opacity: 1;
   animation: SlideLeft 1s ease forwards;
   opacity: 0;
@@ -169,22 +169,24 @@ section.icon-circle {
   background-color: gray;
   min-height: 30%;
   padding: 2.5rem;
-}
-.icon-scroll {
   overflow: hidden;
+}
+
+.icon-scroll {
   white-space: nowrap;
+  overflow: hidden;
 }
 
 .tech-icons {
   display: inline-block;
-  animation: scroll 20s linear infinite;
+  animation: scroll 10s linear infinite alternate; /* Alterado para 'alternate' para fazer a ida e volta */
 }
 
 @keyframes scroll {
-  from {
+  0% {
     transform: translateX(100%);
   }
-  to {
+  100% {
     transform: translateX(-100%);
   }
 }
@@ -205,7 +207,7 @@ span {
 
 .btn {
   display: inline-block;
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   padding: 1rem 2.8rem;
   border-radius: 40px;
   color: #000;
@@ -229,6 +231,7 @@ span {
   animation: Zoom 1s ease forwards, Float 4s ease-in-out infinite;
   animation-delay: 2s, 3s;
   opacity: 0;
+  width: 25rem; /* adicionado */
 }
 
 @keyframes Zoom {
@@ -257,11 +260,21 @@ span {
   }
 }
 
+.about-img {
+  /* criei um css pra ajustar os dados desse elemento*/
+  width: 50%;
+  height: auto;
+}
+
 .about-img img {
-  width: 35vw;
+  width: 100%;
+  height: 70rem;
+  object-fit: cover;
+  border-radius: 2rem;
 }
 
 .about-section {
+  width: 50%;
   margin: 4rem;
 }
 
@@ -280,14 +293,15 @@ span {
 .about-section h2 {
   text-align: left;
   line-height: 1.2;
-}
-
-.about-section h3 {
   font-size: 2.6rem;
 }
 
+.about-section h3 {
+  font-size: 3.6rem;
+}
+
 .about-section p {
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   margin: 2rem 0 3rem;
 }
 
@@ -317,7 +331,7 @@ span {
 
 .portfolio-box img {
   width: 100%;
-  height: 200px;
+  height: 25rem;
   object-fit: cover;
   transition: 0.5s ease;
 }
@@ -370,12 +384,16 @@ span {
   color: #111;
 }
 
+section#contact.contact {
+  background-color: gray;
+}
+
 .contact h2 {
   margin-bottom: 3rem;
 }
 
 .contact form {
-  max-width: 70rem;
+  max-width: 100%;
   margin: 1rem auto;
   text-align: center;
   margin-bottom: 3rem;
@@ -390,15 +408,15 @@ form .input-box {
 form input,
 textarea {
   width: 100%;
-  padding: 1.5rem;
-  font-size: 1.6rem;
+  padding: 3rem;
+  font-size: 2rem;
   border: none;
   outline: none;
   color: #fff;
   background: #111;
   border-radius: 0.8rem;
   gap: 2.5rem;
-  margin: 0.7rem 0;
+  margin: 1.2rem 0px;
 }
 
 form input {
@@ -456,7 +474,7 @@ form .btn {
   }
 
   section {
-    padding: 10rem 3% 2rem;
+    padding: 10rem 3%;
   }
   .footer {
     padding: 2rem 3%;
@@ -465,7 +483,10 @@ form .btn {
     margin-bottom: 7rem;
   }
   .contact {
-    min-height: auto;
+    min-height: 30rem;
+  }
+  .contact form {
+    width: 100%;
   }
 }
 
@@ -508,11 +529,25 @@ form .btn {
     width: 70vw;
     margin-top: 4rem;
   }
+
   .about {
     flex-direction: column;
   }
+
+  .about-section {
+    width: 100%;
+    padding: 2rem;
+  }
+
   .about-img {
-    width: 40vw;
+    width: 100%;
+    padding: 0.5rem 1rem;
+  }
+
+  .about-img img {
+    width: 100%;
+    /*height: 50%;*/
+    padding: 0.5rem 1rem;
   }
   .portfolio h2 {
     margin-bottom: 3rem;
@@ -520,6 +555,9 @@ form .btn {
 
   .portfolio .portfolio-section {
     grid-template-columns: repeat(2, 1fr);
+  }
+  #contact.contact form input.btn {
+    font-size: 1.5rem;
   }
 }
 
