@@ -62,3 +62,5 @@ Fique à vontade para entrar em contato comigo! Use o formulário na seção de 
 Espero que goste do meu trabalho!
 
 ## GIF do Portfolio
+
+![gif do projeto final](gif-do-final.gif)
