@@ -51,6 +51,10 @@ section {
   opacity: 0;
 }
 
+section#home.home div.home-detail button.btn {
+  display: none;
+}
+
 @keyframes SlideRight {
   0% {
     transform: translateX(-100%);
